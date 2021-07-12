@@ -27,6 +27,12 @@ public class BookController {
     @Autowired
     private CustomBookRepositoryImpl customBookRepository;
 
+
+    @GetMapping ("/welcomeMsg")
+    public String getWelcome() {
+        return "Welcome ";
+    }
+
     @PostMapping("/addBook")
     public String saveBook(@RequestBody Book book){
         bookDAO.insertBook(book);
